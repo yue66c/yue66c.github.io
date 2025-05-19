@@ -2,62 +2,69 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}));
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            // Calculate offset for fixed navbar
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
+if (hamburger && navMenu) { // Check if elements exist
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
     });
+
+    // Close menu when a link is clicked (useful for SPA-like behavior or if menu stays open)
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        // For a multi-page site, the menu will close on page load anyway,
+        // but this can be useful if you have anchor links within the same page
+        // or if the menu needs to explicitly close for other reasons.
+        if (navMenu.classList.contains("active")) { // Only if menu is active
+             // Check if the link is an internal page link
+            if (n.getAttribute('href').startsWith('#') || n.getAttribute('href').includes('#')) {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        }
+    }));
+}
+
+
+// Smooth scrolling for anchor links (primarily for #contact-info-home now)
+document.querySelectorAll('a[href^="#"], a[href*="#"]').forEach(anchor => {
+    // Ensure it's not just a link with href="#"
+    if (anchor.getAttribute('href') === '#') return;
+
+    // Check if the anchor link points to an element on the current page
+    const targetId = anchor.getAttribute('href').split('#')[1];
+    if (!targetId) return; // Not an anchor link or malformed
+
+    // Check if the link is meant for the current page.
+    // This check is basic; for more complex scenarios, you might need more robust logic.
+    const isSamePageLink = anchor.pathname === window.location.pathname ||
+                           "/" + anchor.pathname.split('/').pop() === window.location.pathname ||
+                           anchor.pathname.split('/').pop() === window.location.pathname.split('/').pop();
+
+
+    if (isSamePageLink && document.getElementById(targetId)) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    }
 });
 
 
 // Update footer year automatically
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+const currentYearElement = document.getElementById('currentYear');
+if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+}
 
-// Optional: Active link highlighting on scroll (more advanced)
-// You can add this if you want the navbar links to highlight as you scroll through sections.
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('main section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - navbarHeight - 50; // Adjust offset as needed
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active-link'); // Create this class in CSS if you use it
-        if (link.getAttribute('href').includes(current) && current !== '') {
-            link.classList.add('active-link');
-        }
-    });
-    // If you use active-link, add to CSS:
-    // .nav-link.active-link { color: #007bff; font-weight: bold; }
-});
+// Note: The active link highlighting on scroll is removed as it's better
+// to set the active link based on the current HTML page ('active-page' class).
