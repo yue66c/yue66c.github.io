@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Home</title>
+    <title>Your Name - Academic Homepage</title>
     <link rel="stylesheet" href="style.css">
     </head>
 <body>
@@ -12,12 +12,12 @@
             <div class="container">
                 <a href="index.html" class="nav-logo">Your Name</a>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link active-page">Home</a></li>
-                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li class="nav-item"><a href="showcase.html" class="nav-link">Showcase</a></li>
-                    <li class="nav-item"><a href="cv.html" class="nav-link">CV</a></li>
-                    <li class="nav-item"><a href="index.html#contact-info-home" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#home-hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                    <li class="nav-item"><a href="#showcase" class="nav-link">Showcase</a></li>
+                    <li class="nav-item"><a href="#cv" class="nav-link">CV</a></li>
+                    <li class="nav-item"><a href="#contact-footer" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -29,56 +29,127 @@
     </header>
 
     <main>
-        <section id="home-intro" class="home-intro-section">
-            <div class="container">
-                <div class="home-intro-content">
-                    <div class="home-intro-text">
+        <section id="home-hero" class="hero-section"> <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
                         <h1>Your Name</h1>
-                        <p>Ph.D. Student in [Your Department] at [Your University].</p>
-                        <p>My research interests include [Your Interest 1], [Your Interest 2], and [Your Interest 3]. I am passionate about leveraging technology to solve complex problems in [Your Field].</p>
-                        <p>Welcome to my personal space on the web. Here you can find information about my projects, publications, and how to get in touch.</p>
-                        </div>
-                    <div class="home-portrait-container">
-                        <img src="placeholder_portrait.jpg" alt="Your Portrait">
-                        </div>
+                        <p>Ph.D. Student in [Your Department] at [Your University]</p>
+                        <p>Research interests: [Your Interests]</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="placeholder_portrait.jpg" alt="Your Portrait" id="portrait">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact-info-home" class="content-section">
+        <section id="introduction" class="content-section"> <div class="container">
+                <h2>Personal Introduction</h2>
+                <p>
+                    Welcome to my academic homepage. I am a [Your Role, e.g., Ph.D. student, Postdoctoral Researcher]
+                    in the [Your Department] at [Your University]. My research focuses on
+                    [briefly describe your research area]. I am passionate about [mention a passion related to your field].
+                    You can find more about my work in the <a href="#projects">Projects</a> and <a href="#publications">Publications</a> sections.
+                </p>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
             <div class="container">
-                <div class="home-contact-info">
-                    <h2>Get In Touch</h2>
-                    <div class="contact-links-home">
-                        <div class="contact-link-item">
-                            <img src="icons/email_icon.png" alt="Email" class="icon"> <a href="mailto:your.email@example.com">your.email@example.com</a>
-                        </div>
-                        <div class="contact-link-item">
-                            <img src="icons/google_scholar_icon.png" alt="Google Scholar" class="icon">
-                            <a href="[Link to your Google Scholar]" target="_blank">Google Scholar</a>
-                        </div>
-                        <div class="contact-link-item">
-                             <img src="icons/github_icon.png" alt="GitHub" class="icon">
-                            <a href="[Link to your GitHub]" target="_blank">GitHub</a>
-                        </div>
-                        <div class="contact-link-item">
-                             <img src="icons/twitter_icon.png" alt="Twitter" class="icon">
-                            <a href="[Link to your Twitter/X]" target="_blank">Twitter/X</a>
-                        </div>
-                        <div class="contact-link-item">
-                            <img src="icons/linkedin_icon.png" alt="LinkedIn" class="icon">
-                           <a href="[Link to your LinkedIn]" target="_blank">LinkedIn</a>
-                       </div>
-                        </div>
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Ph.D. in [Your Field]</h3>
+                    <p>[Your University] | [City, Country]</p>
+                    <p><em>[Start Year] – Present (or Expected Graduation Year)</em></p>
+                    <p>Advisor: [Your Advisor, if applicable]</p>
+                </div>
+                <div class="education-item">
+                    <h3>B.S. in [Your Field]</h3>
+                    <p>[Your Previous University] | [City, Country]</p>
+                    <p><em>[Start Year] – [End Year]</em></p>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Your Name. All rights reserved.</p>
+        <section id="news" class="content-section">
+            <div class="container">
+                <h2>News</h2>
+                <div class="news-item">
+                    <p><strong>[Date: YYYY-MM-DD]</strong>: [Your news item, e.g., Paper accepted at Conference XYZ!]</p>
+                </div>
+                <div class="news-item">
+                    <p><strong>[Date: YYYY-MM-DD]</strong>: [Another news item, e.g., Presented at Workshop ABC.]</p>
+                </div>
             </div>
+        </section>
+        <section id="projects" class="content-section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="showcase-item project-item">
+                    <img src="placeholder_project1.jpg" alt="Project 1 Thumbnail">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of your project. What was the goal? What technologies were used? What was the outcome?
+                       You can link to a GitHub repository or a project page if available.</p>
+                    <a href="[Link to Project 1]" class="btn">Learn More / View Code</a>
+                </div>
+                <div class="showcase-item project-item">
+                    <img src="placeholder_project2.jpg" alt="Project 2 Thumbnail">
+                    <h3>Project Title 2</h3>
+                    <p>Description of another cool project. Highlight your contributions and skills demonstrated.</p>
+                    <a href="[Link to Project 2]" class="btn">Learn More / View Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="content-section">
+            <div class="container">
+                <h2>Publications</h2>
+                <p>For a full list, please see my <a href="[Link to your Google Scholar]" target="_blank">Google Scholar</a> profile.</p>
+                <div class="publication-item">
+                    <h4>[Year]</h4>
+                    <ul>
+                        <li>
+                            <strong>[Your Name]</strong>, Co-author 1, Co-author 2. "Title of Your Amazing Paper."
+                            <em>Conference/Journal Name</em>. [DOI Link or arXiv Link if available]
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="showcase" class="content-section"> <div class="container">
+                <h2>Showcase</h2>
+                <div class="showcase-item">
+                    <img src="placeholder_showcase1.jpg" alt="Showcase Item 1 Thumbnail">
+                    <h3>Showcase Item 1</h3>
+                    <p>Description of this showcase item (e.g., a talk, a poster, a software demo).</p>
+                    <a href="[Link to Showcase Item 1]" class="btn">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="content-section">
+            <div class="container">
+                <h2>CV</h2>
+                <p>You can download my full CV by clicking the link below.</p>
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="[Link_to_your_CV.pdf]" class="btn" target="_blank">Download CV (PDF)</a>
+                </p>
+                </div>
+        </section>
+
+        </main>
+
+    <footer id="contact-footer"> <div class="container">
+            <p>&copy; <span id="currentYear"></span> Your Name. All rights reserved.</p>
+            <div class="social-links">
+                <a href="mailto:your.email@example.com">Email</a> |
+                <a href="[Link to your Google Scholar]" target="_blank">Google Scholar</a> |
+                <a href="[Link to your GitHub]" target="_blank">GitHub</a> |
+                <a href="[Link to your Twitter/X]" target="_blank">Twitter/X</a> |
+                <a href="[Link to your LinkedIn]" target="_blank">LinkedIn</a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
