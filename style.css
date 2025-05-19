@@ -6,39 +6,33 @@
 }
 
 body {
-    /*
-      IMPORTANT: 'Alilato Arabic Regular' is not a standard web font.
-      You need to ensure it's available.
-      Replace 'Alilato Arabic Regular' with a fallback like 'Noto Sans Arabic', 'Arial', sans-serif
-      if you don't have the font files or a web font service for it.
-    */
     font-family: 'Alilato Arabic Regular', 'Noto Sans Arabic', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fff; /* Main background changed to white */
+    background-color: #fff; /* Main background white */
+    font-size: 16px; /* Base font size for content */
+    padding-top: 70px; /* Provide space for fixed navbar */
 }
 
 /*
-  IF YOU HAVE THE FONT FILES (e.g., in a 'fonts' folder):
-  @font-face {
-    font-family: 'Alilato Arabic Regular';
-    src: url('fonts/AlilatoArabic-Regular.woff2') format('woff2'),
-         url('fonts/AlilatoArabic-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'Alilato Arabic Regular';
+  src: url('fonts/AlilatoArabic-Regular.woff2') format('woff2'),
+       url('fonts/AlilatoArabic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 */
 
 .container {
     width: 80%;
-    max-width: 1100px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
+    max-width: 1000px; /* Slightly adjusted from 1100px to match reference more closely */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Standard padding */
 }
 
 a {
-    color: #007bff;
+    color: #1a0dab; /* Link color from reference */
     text-decoration: none;
 }
 
@@ -51,14 +45,15 @@ ul {
 }
 
 h1, h2, h3, h4 {
-    margin-bottom: 0.8rem;
     color: #2c3e50;
+    font-weight: normal; /* Titles in reference are generally not bold */
+    margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; } /* Section titles */
-h3 { font-size: 1.8rem; }
-h4 { font-size: 1.4rem; }
+h1 { font-size: 2.2rem; margin-bottom: 1.5rem; } /* Matches "Your Name" in content */
+h2 { font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; } /* Section titles */
+h3 { font-size: 1.2rem; color: #333; }
+h4 { font-size: 1rem; color: #555; }
 
 img {
     max-width: 100%;
@@ -66,15 +61,23 @@ img {
     display: block;
 }
 
+/* Main Layout Wrapper for Content */
+.main-content-wrapper {
+    padding: 30px 0; /* Padding above and below main content sections */
+}
+
+
 /* Navbar */
 .navbar {
-    background: #f0f0f0; /* Very light gray */
-    padding: 1rem 0;
+    background: #f8f9fa; /* Very light gray - matching reference */
+    padding: 0.75rem 0; /* Adjusted padding */
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Softer shadow */
+    border-bottom: 1px solid #dee2e6; /* Subtle border like reference */
+    font-size: 0.9rem; /* Smaller font size for nav items */
 }
 
 .navbar .container {
@@ -84,9 +87,9 @@ img {
 }
 
 .nav-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333; /* Darker text for light gray background */
+    font-size: 1.25rem; /* Smaller than content H1 */
+    font-weight: normal; /* Reference logo is not bold */
+    color: #333;
 }
 
 .nav-menu {
@@ -95,265 +98,373 @@ img {
 }
 
 .nav-item {
-    margin-left: 20px;
+    margin-left: 1.25rem; /* Spacing from reference */
 }
 
 .nav-link {
-    color: #333; /* Darker text for light gray background */
-    padding: 0.5rem;
+    color: #555; /* Slightly muted color for nav links */
+    padding: 0.25rem 0; /* Minimal padding, looks like text */
     transition: color 0.3s ease;
-    font-weight: normal; /* Ensuring it's regular weight */
 }
 
 .nav-link:hover,
-.nav-link.active-link { /* For JS active link highlighting */
-    color: #007bff;
+.nav-link.active-page { /* active-page will be set on the current page's link */
+    color: #000; /* Darker on hover/active */
     text-decoration: none;
 }
-.nav-link.active-link {
-    font-weight: bold; /* Or a different visual cue for active */
-}
-
 
 /* Hamburger Menu for Mobile */
 .hamburger {
     display: none;
     cursor: pointer;
 }
-
 .bar {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 22px;
+    height: 2px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background-color: #333; /* Hamburger bars visible on light gray */
+    background-color: #333;
 }
 
-/* Hero Section (Home) */
-#home-hero { /* Updated ID */
-    background: #fff; /* White background */
-    padding: 120px 0 60px 0; /* Adjust top padding for fixed navbar */
-    min-height: auto; /* Let content define height, or set a vh if preferred */
-    display: flex;
-    align-items: center;
-    text-align: left;
-    border-bottom: 1px solid #eee; /* Separator like other sections */
-}
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.hero-text {
-    flex: 2;
-}
-
-.hero-image {
-    flex: 1;
-    text-align: center;
-}
-
-.hero-image img {
-    max-width: 250px; /* Adjust as needed */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Content Sections */
+/* Generic Section Styling */
 .content-section {
-    padding: 70px 0; /* Consistent padding */
-    background-color: #fff; /* Default white background for all content sections */
-    border-bottom: 1px solid #eee; /* Subtle separator */
-}
-
-.content-section:last-of-type { /* No border for the very last section before footer */
-    border-bottom: none;
-}
-
-/* Remove .bg-light as all content sections are now white by default */
-/* If you want alternating colors, you can add .bg-light back to specific sections in HTML
-   and define it in CSS:
-.bg-light {
-    background-color: #f8f9fa; // A very subtle off-white
-}
-*/
-
-.content-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 10px;
-    font-weight: normal; /* As per example image, titles are not overly bold */
-}
-
-.content-section h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 60px;
-    height: 2px; /* Thinner underline */
-    background-color: #007bff;
-}
-
-/* Specific Section Styling (can be adjusted) */
-#introduction, #education, #news, #projects, #publications, #showcase, #cv {
-    background-color: #fff; /* Explicitly white */
-}
-
-
-/* Education Section (keeping some distinct styling if desired) */
-.education-item {
-    background: #f9f9f9; /* Slight off-white if you want to differentiate items */
+    margin-bottom: 40px; /* Space between sections */
     padding: 20px;
-    margin-bottom: 20px;
-    border-left: 4px solid #007bff;
-    border-radius: 4px;
-}
-.education-item h3 {
-    color: #0056b3;
+    background-color: #fff; /* Ensure white background */
+    /* border: 1px solid #e0e0e0; /* Optional: if you want bordered sections */
+    /* border-radius: 5px; */
 }
 
-/* Publications Section */
-.publication-item {
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Home Page Specific --- */
+
+/* Personal Introduction Section (includes hero-like elements) */
+#personal-intro {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between text and image */
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee; /* Separator from reference */
     margin-bottom: 30px;
 }
-.publication-item h4 {
+
+.intro-text {
+    flex: 3; /* Text takes more space */
+}
+.intro-text h1 { /* "Your Name" */
+    margin-bottom: 0.5rem;
+}
+.intro-text .subtitle { /* "PhD Student..." */
+    font-size: 1rem;
     color: #555;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
-.publication-item ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-.publication-item ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #007bff;
+.intro-text p { /* Bio paragraph */
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
-/* Showcase/Projects Section */
-.showcase-item, .project-item { /* Added .project-item */
-    background: #f9f9f9; /* Slight off-white */
-    padding: 20px;
+.intro-image {
+    flex: 1;
+    max-width: 200px; /* Max width for portrait */
+}
+.intro-image img {
+    border-radius: 5px; /* Slightly rounded corners for image */
+    width: 100%;
+}
+
+/* Social Links in Introduction */
+.social-links-intro {
+    margin-top: 15px;
     margin-bottom: 20px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
-.showcase-item img, .project-item img {
-    max-width: 200px;
-    margin: 0 auto 15px auto;
-    border-radius: 5px;
+.social-links-intro a {
+    margin-right: 15px;
+    font-size: 0.9rem;
+    color: #1a0dab; /* Standard link color */
+}
+.social-links-intro a i {
+    margin-right: 5px; /* Space between icon and text */
+    font-size: 1.1rem; /* Slightly larger icons */
+}
+.social-links-intro a:last-child {
+    margin-right: 0;
 }
 
-.btn {
+
+/* Two-column layout (for Education & News on Home, or other pages) */
+.two-column-layout {
+    display: flex;
+    gap: 40px; /* Space between columns */
+    align-items: flex-start;
+}
+.column {
+    flex: 1; /* Each column takes equal space */
+}
+.column h2 {
+    font-size: 1.2rem; /* Smaller headings for columns */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Education & News specific styling (within columns) */
+.education-item, .news-item {
+    margin-bottom: 1.5rem;
+    padding-left: 15px; /* Indent content */
+    border-left: 3px solid #007bff; /* Accent line */
+}
+.education-item:last-child, .news-item:last-child {
+    margin-bottom: 0;
+}
+.education-item h3, .news-item h3 { /* Degree or News Date */
+    font-size: 1rem;
+    font-weight: bold; /* Bolder for item titles */
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+.education-item .university, .education-item .date,
+.news-item .source {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+.education-item p, .news-item p { /* Description or News content */
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0;
+}
+
+
+/* --- Publications Page Specific --- */
+.publication-list .publication-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.publication-list .publication-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.publication-item h3.paper-title { /* Paper Title */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+.publication-item .authors {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+.publication-item .authors strong { /* Highlight your name */
+    font-weight: bold;
+    color: #000;
+}
+.publication-item .venue {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+.publication-item .links a {
+    font-size: 0.85rem;
+    margin-right: 10px;
+    color: #007bff;
+    background-color: #e7f3ff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.publication-item .links a:hover {
+    background-color: #d0e7ff;
+}
+
+/* --- Projects/Showcase Page Specific --- */
+.project-grid, .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 25px;
+}
+.project-item, .showcase-item { /* Card-like appearance */
+    background: #f9f9f9;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.project-item img, .showcase-item img {
+    width: 100%;
+    max-height: 180px; /* Limit image height */
+    object-fit: cover; /* Ensure image covers space nicely */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.project-item h3, .showcase-item h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.project-item p, .showcase-item p { /* Description */
+    font-size: 0.9rem;
+    flex-grow: 1; /* Makes description take available space */
+    margin-bottom: 15px;
+}
+.project-item .btn, .showcase-item .btn {
     display: inline-block;
     background: #007bff;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-    border: none;
-}
-.btn:hover {
-    background: #0056b3;
-    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
     text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: auto; /* Pushes button to bottom of card */
+}
+.project-item .btn:hover, .showcase-item .btn:hover {
+    background: #0056b3;
 }
 
-/* News Section */
-.news-item {
-    background: #f9f9f9; /* Slight off-white */
-    padding: 15px;
-    margin-bottom: 10px;
-    border-left: 3px solid #28a745;
-    border-radius: 4px;
+/* --- CV Page Specific --- */
+#cv-page .cv-download-link {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+#cv-page .cv-download-link:hover {
+    background: #0056b3;
+    color: #fff;
+}
+#cv-page .cv-highlights ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+#cv-page .cv-highlights ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
 
 /* Footer */
-#contact-footer { /* Updated ID */
-    background: #f0f0f0; /* Very light gray */
-    color: #333; /* Darker text for light gray background */
+.site-footer {
+    background: #f8f9fa; /* Very light gray - matching navbar */
+    color: #555;
     text-align: center;
-    padding: 30px 0;
+    padding: 25px 0;
     margin-top: 40px; /* Space above footer */
+    border-top: 1px solid #dee2e6; /* Subtle border like reference */
+    font-size: 0.85rem;
 }
 
-#contact-footer p {
-    margin-bottom: 10px;
+.site-footer p {
+    margin-bottom: 8px;
 }
 
-.social-links a {
-    color: #333; /* Darker text for light gray background */
-    margin: 0 10px;
-    font-size: 1.1rem;
+.footer-social-links a {
+    color: #555;
+    margin: 0 8px;
+    font-size: 1rem; /* Icon size for footer links */
 }
-
-.social-links a:hover {
-    color: #007bff;
+.footer-social-links a i { /* For FontAwesome icons if used */
+   transition: color 0.3s ease;
+}
+.footer-social-links a:hover,
+.footer-social-links a:hover i {
+    color: #000;
 }
 
 
 /* Responsive Design */
 @media(max-width: 768px) {
+    body {
+        padding-top: 60px; /* Adjust for smaller navbar on mobile if needed */
+        font-size: 15px;
+    }
+    .navbar {
+        padding: 0.6rem 0;
+    }
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 61px; /* Adjust based on new navbar padding */
-        flex-direction: column;
-        background-color: #e0e0e0; /* Slightly darker light gray for mobile menu */
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
         left: 0;
+        top: 100%; /* Position below navbar */
+        background-color: #f0f0f0; /* Background for dropdown */
+        width: 100%;
+        flex-direction: column;
+        text-align: left;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        padding: 10px 0;
     }
-
+    .nav-menu.active { /* This class is toggled by JS */
+        display: flex;
+    }
     .nav-item {
-        margin: 1.5rem 0;
+        margin-left: 0;
+        width: 100%;
     }
     .nav-link {
-        color: #333;
+        display: block;
+        padding: 0.75rem 20px; /* Full-width clickable area */
+        border-bottom: 1px solid #e0e0e0;
     }
-    .nav-link:hover, .nav-link.active-link {
-        color: #007bff;
+    .nav-item:last-child .nav-link {
+        border-bottom: none;
     }
-
 
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger */
     }
-
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .hero-content {
+    #personal-intro {
         flex-direction: column;
+        align-items: center; /* Center items when stacked */
         text-align: center;
     }
-    .hero-text { margin-bottom: 30px; }
-    .hero-image { order: -1; margin-bottom: 20px; }
-    .hero-image img { max-width: 200px; }
+    .intro-image {
+        order: -1; /* Image on top on mobile */
+        margin-bottom: 20px;
+        max-width: 180px;
+    }
+    .intro-text {
+        align-items: center;
+        text-align: center;
+    }
+    .social-links-intro {
+        justify-content: center;
+        text-align: center;
+    }
 
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    .container { width: 90%; }
-    .content-section { padding: 50px 0; }
+    .two-column-layout {
+        flex-direction: column; /* Stack columns */
+        gap: 0;
+    }
+    .column {
+        margin-bottom: 30px;
+    }
+    .column:last-child {
+        margin-bottom: 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .content-section { padding: 15px; }
 }
