@@ -5,28 +5,29 @@
     box-sizing: border-box;
 }
 
-/*
-   IMPORTANT: Alilato Arabic Regular Font
-   1. Create a folder named 'fonts' in your website's root directory.
-   2. Place your Alilato Arabic Regular font files (e.g., alilato-arabic-regular.woff2, alilato-arabic-regular.woff) inside this 'fonts' folder.
-   3. Adjust the src url() paths below if your font file names or paths are different.
-*/
-@font-face {
-    font-family: 'Alilato Arabic Regular';
-    src: url('../fonts/alilato-arabic-regular.woff2') format('woff2'), /* Adjust path if needed */
-         url('../fonts/alilato-arabic-regular.woff') format('woff');   /* Adjust path if needed */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 body {
-    font-family: 'Alilato Arabic Regular', Tahoma, Geneva, Verdana, sans-serif; /* Apply Alilato Arabic Regular */
+    /*
+      IMPORTANT: 'Alilato Arabic Regular' is not a standard web font.
+      You need to ensure it's available.
+      Replace 'Alilato Arabic Regular' with a fallback like 'Noto Sans Arabic', 'Arial', sans-serif
+      if you don't have the font files or a web font service for it.
+    */
+    font-family: 'Alilato Arabic Regular', 'Noto Sans Arabic', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #ffffff; /* Main background to white */
-    padding-top: 70px; /* Adjust if navbar height changes, to prevent content from hiding behind fixed navbar */
+    background-color: #fff; /* Main background changed to white */
 }
+
+/*
+  IF YOU HAVE THE FONT FILES (e.g., in a 'fonts' folder):
+  @font-face {
+    font-family: 'Alilato Arabic Regular';
+    src: url('fonts/AlilatoArabic-Regular.woff2') format('woff2'),
+         url('fonts/AlilatoArabic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+*/
 
 .container {
     width: 80%;
@@ -55,7 +56,7 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; } /* For section titles on other pages */
+h2 { font-size: 2.2rem; } /* Section titles */
 h3 { font-size: 1.8rem; }
 h4 { font-size: 1.4rem; }
 
@@ -67,14 +68,13 @@ img {
 
 /* Navbar */
 .navbar {
-    background: #808080; /* Gray navbar background */
-    color: #fff;
+    background: #f0f0f0; /* Very light gray */
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Softer shadow */
 }
 
 .navbar .container {
@@ -86,7 +86,7 @@ img {
 .nav-logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #fff;
+    color: #333; /* Darker text for light gray background */
 }
 
 .nav-menu {
@@ -99,17 +99,21 @@ img {
 }
 
 .nav-link {
-    color: #fff;
+    color: #333; /* Darker text for light gray background */
     padding: 0.5rem;
     transition: color 0.3s ease;
+    font-weight: normal; /* Ensuring it's regular weight */
 }
 
 .nav-link:hover,
-.nav-link.active-page { /* Style for the active page link */
-    color: #cce5ff; /* A lighter color for hover/active */
+.nav-link.active-link { /* For JS active link highlighting */
+    color: #007bff;
     text-decoration: none;
-    font-weight: bold;
 }
+.nav-link.active-link {
+    font-weight: bold; /* Or a different visual cue for active */
+}
+
 
 /* Hamburger Menu for Mobile */
 .hamburger {
@@ -123,137 +127,107 @@ img {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background-color: white;
+    background-color: #333; /* Hamburger bars visible on light gray */
 }
 
-/* Home Page Specific: Hero Section */
-.home-intro-section {
-    background: #ffffff; /* White background */
-    padding: 40px 0; /* Reduced padding as it's the main content area now */
-    min-height: calc(80vh - 70px); /* Adjust based on navbar height and footer */
+/* Hero Section (Home) */
+#home-hero { /* Updated ID */
+    background: #fff; /* White background */
+    padding: 120px 0 60px 0; /* Adjust top padding for fixed navbar */
+    min-height: auto; /* Let content define height, or set a vh if preferred */
     display: flex;
     align-items: center;
+    text-align: left;
+    border-bottom: 1px solid #eee; /* Separator like other sections */
 }
 
-.home-intro-content {
+.hero-content {
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: center;
     justify-content: space-between;
     gap: 40px;
-    width: 100%;
 }
 
-.home-intro-text {
+.hero-text {
     flex: 2;
 }
 
-.home-intro-text h1 { /* Your Name on the home page */
-    font-size: 2.5rem; /* Slightly smaller than original hero */
-    margin-bottom: 1rem;
-}
-
-.home-intro-text p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.home-portrait-container {
+.hero-image {
     flex: 1;
-    max-width: 250px; /* Control portrait size */
-    margin-left: 20px;
+    text-align: center;
 }
 
-.home-portrait-container img {
-    width: 100%;
-    border-radius: 8px; /* Optional: rounded corners for the image */
+.hero-image img {
+    max-width: 250px; /* Adjust as needed */
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Contact Info on Home Page */
-.home-contact-info {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+/* Content Sections */
+.content-section {
+    padding: 70px 0; /* Consistent padding */
+    background-color: #fff; /* Default white background for all content sections */
+    border-bottom: 1px solid #eee; /* Subtle separator */
 }
 
-.home-contact-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: left; /* Align to left, not center */
-}
-/* Remove underline for h2 in contact info if it inherits from general content-section h2 */
-.home-contact-info h2::after {
-    display: none;
+.content-section:last-of-type { /* No border for the very last section before footer */
+    border-bottom: none;
 }
 
-
-.contact-links-home {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 20px; /* Space between icon links */
-    align-items: center;
+/* Remove .bg-light as all content sections are now white by default */
+/* If you want alternating colors, you can add .bg-light back to specific sections in HTML
+   and define it in CSS:
+.bg-light {
+    background-color: #f8f9fa; // A very subtle off-white
 }
+*/
 
-.contact-link-item {
-    display: flex;
-    align-items: center;
-    color: #333;
-    font-size: 1rem;
-}
-
-.contact-link-item img.icon { /* Style for icons */
-    width: 24px; /* Adjust icon size */
-    height: 24px;
-    margin-right: 8px;
-}
-.contact-link-item a {
-    color: #333;
-}
-.contact-link-item a:hover {
-    color: #007bff;
-}
-
-
-/* General Page Content (for publications.html, projects.html etc.) */
-.page-header {
+.content-section h2 {
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-}
-.page-header h1 {
-    font-size: 2.5rem;
-    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: normal; /* As per example image, titles are not overly bold */
 }
 
-.content-section { /* Used on other pages like publications, projects */
-    padding: 40px 0;
-    background-color: #ffffff;
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 2px; /* Thinner underline */
+    background-color: #007bff;
 }
 
-.content-section h2 { /* Section titles within pages like "2023" for publications */
-    text-align: left; /* Align to left */
+/* Specific Section Styling (can be adjusted) */
+#introduction, #education, #news, #projects, #publications, #showcase, #cv {
+    background-color: #fff; /* Explicitly white */
+}
+
+
+/* Education Section (keeping some distinct styling if desired) */
+.education-item {
+    background: #f9f9f9; /* Slight off-white if you want to differentiate items */
+    padding: 20px;
     margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #2c3e50;
-    border-bottom: 2px solid #007bff; /* Underline for subsection titles */
-    padding-bottom: 5px;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
 }
-.content-section h2::after { /* Remove global underline for these h2s */
-    display: none;
+.education-item h3 {
+    color: #0056b3;
 }
 
-
-/* Publications Page Specifics */
+/* Publications Section */
 .publication-item {
     margin-bottom: 30px;
 }
-.publication-item h3 { /* Year */
-    font-size: 1.5rem;
+.publication-item h4 {
     color: #555;
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .publication-item ul li {
     margin-bottom: 10px;
@@ -267,25 +241,22 @@ img {
     color: #007bff;
 }
 
-/* Project/Showcase Item Styling (Example) */
-.project-item, .showcase-item {
-    background: #f9f9f9; /* Light gray background for items to stand out on white page */
+/* Showcase/Projects Section */
+.showcase-item, .project-item { /* Added .project-item */
+    background: #f9f9f9; /* Slight off-white */
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
-.project-item img, .showcase-item img {
+.showcase-item img, .project-item img {
     max-width: 200px;
     margin: 0 auto 15px auto;
     border-radius: 5px;
 }
-.project-item h3, .showcase-item h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #0056b3;
-}
+
 .btn {
     display: inline-block;
     background: #007bff;
@@ -294,55 +265,60 @@ img {
     border-radius: 5px;
     margin-top: 10px;
     transition: background-color 0.3s ease;
+    border: none;
 }
 .btn:hover {
     background: #0056b3;
+    color: #fff;
     text-decoration: none;
+}
+
+/* News Section */
+.news-item {
+    background: #f9f9f9; /* Slight off-white */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid #28a745;
+    border-radius: 4px;
 }
 
 
 /* Footer */
-footer {
-    background: #f0f0f0; /* Lighter gray footer */
-    color: #555; /* Darker text for better contrast on light gray */
+#contact-footer { /* Updated ID */
+    background: #f0f0f0; /* Very light gray */
+    color: #333; /* Darker text for light gray background */
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px; /* Add some space before the footer */
-    border-top: 1px solid #ddd;
+    padding: 30px 0;
+    margin-top: 40px; /* Space above footer */
 }
 
-footer p {
+#contact-footer p {
     margin-bottom: 10px;
 }
 
-.footer-social-links a { /* Different from home contact links if needed */
-    color: #555;
+.social-links a {
+    color: #333; /* Darker text for light gray background */
     margin: 0 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
-.footer-social-links a:hover {
+.social-links a:hover {
     color: #007bff;
 }
 
 
 /* Responsive Design */
 @media(max-width: 768px) {
-    body {
-        padding-top: 60px; /* Adjust for potentially smaller navbar height on mobile */
-    }
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 58px; /* Adjust to navbar height */
+        top: 61px; /* Adjust based on new navbar padding */
         flex-direction: column;
-        background-color: #808080; /* Gray background */
+        background-color: #e0e0e0; /* Slightly darker light gray for mobile menu */
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding-top: 1rem;
-        padding-bottom: 1rem;
     }
 
     .nav-menu.active {
@@ -350,8 +326,15 @@ footer p {
     }
 
     .nav-item {
-        margin: 1rem 0;
+        margin: 1.5rem 0;
     }
+    .nav-link {
+        color: #333;
+    }
+    .nav-link:hover, .nav-link.active-link {
+        color: #007bff;
+    }
+
 
     .hamburger {
         display: block;
@@ -361,21 +344,16 @@ footer p {
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .home-intro-content {
+    .hero-content {
         flex-direction: column;
         text-align: center;
     }
-    .home-portrait-container {
-        order: -1; /* Image on top on mobile */
-        margin: 0 auto 20px auto; /* Center image */
-    }
-    .home-intro-text {
-        width: 100%;
-    }
-    .contact-links-home {
-        justify-content: center;
-    }
-    .container {
-        width: 95%;
-    }
+    .hero-text { margin-bottom: 30px; }
+    .hero-image { order: -1; margin-bottom: 20px; }
+    .hero-image img { max-width: 200px; }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .container { width: 90%; }
+    .content-section { padding: 50px 0; }
 }
