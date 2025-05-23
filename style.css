@@ -126,9 +126,9 @@ img { max-width: 100%; height: auto; display: block; }
 .intro-image { flex: 1; max-width: 180px; /* Adjusted from 200px, luost.me portrait is modest */ }
 .intro-image img { border-radius: 5px; width: 100%; }
 
-.social-links-intro { margin-top: 15px; margin-bottom: 15px; }
+.social-links-intro { margin-top: 15px; margin-bottom: 20px; }
 .social-links-intro a {
-    margin-right: 30px; /* Increased spacing a bit */
+    margin-right: 18px; /* Increased spacing a bit */
     font-size: 0.9rem;
     /* MODIFIED: Changed color to dark cornflower blue */
     color: #6495ED; /* Dark Cornflower Blue */
