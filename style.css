@@ -194,3 +194,131 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-link:hover, .nav-link.active-page { color: #000; text-decoration: none; }
 
 /* ... (rest of your style.css) ... */
+
+.two-column-layout { display: flex; gap: 40px; align-items: flex-start; }
+.column { flex: 1; }
+
+/* Education and News title should bold, add icon for News */
+.column h2 { /* Titles within columns like Education, News */
+    font-size: 1.2rem; /* luost.me sub-section titles are modest */
+    font-weight: bold; /* BOLD as requested */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex; /* For aligning icon with News title */
+    align-items: center;
+}
+.column h2 i.title-icon { /* Icon for News title */
+    margin-right: 8px;
+    font-size: 1.1rem; /* Adjust icon size as needed */
+    color: #555; /* Or match title color, or specific color */
+}
+
+.education-item, .news-item {
+    margin-bottom: 1.5rem;
+    /* Removing padding-left and border-left for a cleaner look like luost.me sections */
+}
+.education-item:last-child, .news-item:last-child { margin-bottom: 0; }
+
+.education-item h3, .news-item h3 { /* Degree or News Date */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+.education-item .university, .education-item .date,
+.news-item .source { /* Assuming .source might be used for news items if needed */
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+.education-item p, .news-item p {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0;
+}
+.news-item p:not(:first-of-type) { /* If news content is just a p after h3 */
+     font-size: 0.9rem;
+     color: #444;
+}
+
+
+/* --- Publications Page Specific --- */
+.publication-list .publication-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
+.publication-list .publication-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.publication-item h3.paper-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.3rem; }
+.publication-item .authors { font-size: 0.9rem; color: #555; margin-bottom: 0.3rem; }
+.publication-item .authors strong { font-weight: bold; color: #000; }
+.publication-item .venue { font-size: 0.9rem; font-style: italic; color: #666; margin-bottom: 0.5rem; }
+.publication-item .links a { font-size: 0.85rem; margin-right: 10px; color: #007bff; background-color: #e7f3ff; padding: 3px 8px; border-radius: 3px; text-decoration: none; }
+.publication-item .links a:hover { background-color: #d0e7ff; }
+
+/* --- Projects/Showcase Page Specific --- */
+.project-grid, .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.project-item, .showcase-item { background: #f9f9f9; border: 1px solid #e7e7e7; border-radius: 5px; padding: 20px; display: flex; flex-direction: column; }
+.project-item img, .showcase-item img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
+.project-item h3, .showcase-item h3 { font-size: 1.15rem; font-weight: bold; margin-bottom: 10px; }
+.project-item p, .showcase-item p { font-size: 0.9rem; flex-grow: 1; margin-bottom: 15px; }
+.project-item .btn, .showcase-item .btn { display: inline-block; background: #007bff; color: #fff; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; text-align: center; margin-top: auto; }
+.project-item .btn:hover, .showcase-item .btn:hover { background: #0056b3; }
+
+/* --- CV Page Specific --- */
+#cv-page .cv-download-link { display: inline-block; background: #007bff; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-size: 1rem; margin: 20px 0; transition: background-color 0.3s ease; }
+#cv-page .cv-download-link:hover { background: #0056b3; color: #fff; }
+#cv-page .cv-highlights ul { list-style: disc; padding-left: 20px; margin-top: 15px; }
+#cv-page .cv-highlights ul li { margin-bottom: 8px; font-size: 0.95rem; }
+
+/* Footer */
+.site-footer {
+    background: #f8f9fa;
+    color: #555;
+    text-align: center;
+    padding: 20px 0; /* 1. Narrow contact footer slightly (less top/bottom padding) */
+    margin-top: 40px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.85rem;
+}
+/* The .container within the footer will naturally be wider due to the global .container change.
+   If "narrow Contact footer" meant the text content within it should be narrower than the main page content,
+   you would need a specific container for the footer's content, e.g.:
+.site-footer .footer-container { max-width: 900px; margin: 0 auto; padding: 0 15px; }
+   Then use <div class="footer-container"> inside <div class="container"> in the footer HTML.
+   For now, assuming it means overall vertical space or matching the main content width.
+*/
+.site-footer p { margin-bottom: 8px; }
+.footer-social-links a { color: #555; margin: 0 8px; font-size: 1rem; }
+.footer-social-links a i { transition: color 0.3s ease; }
+.footer-social-links a:hover, .footer-social-links a:hover i { color: #000; }
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    body { padding-top: 60px; font-size: 15px; }
+    .navbar { padding: 0.6rem 0; }
+    .nav-menu { display: none; position: absolute; left: 0; top: 100%; background-color: #f0f0f0; width: 100%; flex-direction: column; text-align: left; box-shadow: 0 8px 16px rgba(0,0,0,0.1); padding: 10px 0; }
+    .nav-menu.active { display: flex; }
+    .nav-item { margin-left: 0; width: 100%; }
+    .nav-link { display: block; padding: 0.75rem 20px; border-bottom: 1px solid #e0e0e0; }
+    .nav-item:last-child .nav-link { border-bottom: none; }
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #personal-intro { flex-direction: column; align-items: center; text-align: center; }
+    .intro-image { order: -1; margin-bottom: 20px; max-width: 160px; /* Further reduced for mobile */ }
+    .intro-text { align-items: center; text-align: center; }
+    .social-links-intro { justify-content: center; text-align: center; }
+
+    .two-column-layout { flex-direction: column; gap: 0; }
+    .column { margin-bottom: 30px; }
+    .column:last-child { margin-bottom: 0; }
+    .column h2 { text-align: left; /* Align column titles left on mobile */ }
+    .column h2 i.title-icon { font-size: 1rem; } /* Adjust icon size for mobile */
+
+
+    .container { width: 90%; padding: 0 15px; /* Adjusted padding for mobile */ }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .content-section { padding: 15px 0; /* Adjust section padding */ }
+}
+
