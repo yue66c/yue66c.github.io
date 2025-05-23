@@ -12,6 +12,9 @@ body {
     background-color: #fff;
     font-size: 16px;
     padding-top: 70px; /* Adjust if navbar height changes */
+    /* Add these lines for 0.5cm left/right margin */
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
 }
 
 /*
