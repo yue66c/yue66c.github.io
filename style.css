@@ -106,10 +106,10 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 1.25rem;
     font-weight: normal;
     color: #333;
-    margin-left: 15px;
+    margin-left: 11px;
 }
 .nav-menu-container {
-    margin-right: 15px;
+    margin-right: 11px;
 }
 .nav-menu { display: flex; list-style: none; }
 .nav-item { margin-left: 1.25rem; }
@@ -287,8 +287,8 @@ img { max-width: 100%; height: auto; display: block; }
     background: #f8f9fa;
     color: #555;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 10px; /* Adjust 20px to be smaller or larger as you prefer */
+    padding: 50px 0;
+    margin-top: 15px; /* Adjust 20px to be smaller or larger as you prefer */
     border-top: 1px solid #dee2e6;
     font-size: 0.85rem;
 }
