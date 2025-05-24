@@ -28,7 +28,7 @@ body {
 .container {
     width: 100%; /* Allow it to be responsive but constrained */
     /* MODIFIED: Reduced max-width to make the content block narrower, creating wider side "margins" */
-    max-width: 1400px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
+    max-width: 1200px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
     margin: 0 auto; /* Center the container */
     padding: 0 20px; /* Keeps internal padding within the container for its content */
 }
