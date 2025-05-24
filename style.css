@@ -7,8 +7,11 @@
 
 body {
     font-family: 'Alilato Arabic Regular', 'Noto Sans Arabic', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000;
-    background-color: #ffffff; 
+    line-height: 1.6;
+    color: #333;
+    /* MODIFIED: Set a background color for the entire page */
+    background-color: #f0f3f5; /* A light, neutral background color */
+    font-size: 16px;
     text-align:left; 
     margin-top: 30px; 
     margin-bottom: 30px;
@@ -34,7 +37,7 @@ body {
 .container {
     width: 90%; /* Allow it to be responsive but constrained */
     /* MODIFIED: Reduced max-width to make the content block narrower, creating wider side "margins" */
-    max-width: 1300px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
+    max-width: 1200px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
     margin: 0 auto; /* Center the container */
     padding: 0 20px; /* Keeps internal padding within the container for its content */
 }
