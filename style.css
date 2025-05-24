@@ -106,12 +106,10 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 1.25rem;
     font-weight: normal;
     color: #333;
+    margin-left: 15px;
 }
 .nav-menu-container {
-    /* REMOVED: margin-right: 19px; */
-    /* This allows the navigation menu block to align to the end of the flex space,
-       which is inset by the .navbar .container's padding.
-       The "CV" link, as the last item, should then align with this edge. */
+    margin-right: 15px;
 }
 .nav-menu { display: flex; list-style: none; }
 .nav-item { margin-left: 1.25rem; }
@@ -289,6 +287,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: #f8f9fa;
     color: #555;
     text-align: center;
+    padding: 20px 0;
     margin-top: 10px; /* Adjust 20px to be smaller or larger as you prefer */
     border-top: 1px solid #dee2e6;
     font-size: 0.85rem;
