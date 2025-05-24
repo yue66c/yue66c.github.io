@@ -81,7 +81,9 @@ h4 { font-size: 1rem; color: #555; }
 
 img { max-width: 100%; height: auto; display: block; }
 
-.main-content-wrapper { padding: 30px 0; }
+.main-content-wrapper {
+    padding: 15px 0; /* Adjust 15px to be smaller or larger as you prefer */
+}
 
 /* Navbar */
 .navbar {
@@ -290,18 +292,15 @@ img { max-width: 100%; height: auto; display: block; }
     background: #f8f9fa;
     color: #555;
     text-align: center;
-    padding: 20px 0; /* 1. Narrow contact footer slightly (less top/bottom padding) */
-    margin-top: 40px;
+    /* padding: 20px 0; -- This was an old setting, ensure it's not conflicting.
+                          The main vertical spacing before the footer is its margin-top. */
+    /* MODIFIED: Reduced margin-top to narrow the gray space
+                 between the main white content container and the footer.
+                 Original was "margin-top: 40px;" */
+    margin-top: 20px; /* Adjust 20px to be smaller or larger as you prefer */
     border-top: 1px solid #dee2e6;
     font-size: 0.85rem;
 }
-/* The .container within the footer will naturally be wider due to the global .container change.
-   If "narrow Contact footer" meant the text content within it should be narrower than the main page content,
-   you would need a specific container for the footer's content, e.g.:
-.site-footer .footer-container { max-width: 900px; margin: 0 auto; padding: 0 15px; }
-   Then use <div class="footer-container"> inside <div class="container"> in the footer HTML.
-   For now, assuming it means overall vertical space or matching the main content width.
-*/
 .site-footer p { margin-bottom: 8px; }
 .footer-social-links a { color: #555; margin: 0 8px; font-size: 1rem; }
 .footer-social-links a i { transition: color 0.3s ease; }
