@@ -28,7 +28,7 @@ body {
 .container {
     width: 90%; /* Allow it to be responsive but constrained */
     /* MODIFIED: Reduced max-width to make the content block narrower, creating wider side "margins" */
-    max-width: 1000px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
+    max-width: 1200px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
     margin: 0 auto; /* Center the container */
     padding: 0 20px; /* Keeps internal padding within the container for its content */
 }
@@ -105,12 +105,12 @@ img { max-width: 100%; height: auto; display: block; }
     font-weight: normal;
     color: #333;
     /* ADDED: Move "Your Name" (the logo) to the right by approximately 0.5cm */
-    margin-left: 15px; /* 0.5cm is roughly 18.9px */
+    margin-left: 19px; /* 0.5cm is roughly 18.9px */
 }
 .nav-menu-container {
     /* ADDED: Move the block of navigation links to the left by approximately 0.5cm */
     /* This works with "justify-content: space-between;" on the parent ".navbar .container" */
-    margin-right: 15px; /* 0.5cm is roughly 18.9px */
+    margin-right: 19px; /* 0.5cm is roughly 18.9px */
 }
 .nav-menu { display: flex; list-style: none; }
 .nav-item { margin-left: 1.25rem; }
