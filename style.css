@@ -105,12 +105,12 @@ img { max-width: 100%; height: auto; display: block; }
     font-weight: normal;
     color: #333;
     /* ADDED: Move "Your Name" (the logo) to the right by approximately 0.5cm */
-    margin-left: 19px; /* 0.5cm is roughly 18.9px */
+    margin-left: 25px; /* 0.5cm is roughly 18.9px */
 }
 .nav-menu-container {
     /* ADDED: Move the block of navigation links to the left by approximately 0.5cm */
     /* This works with "justify-content: space-between;" on the parent ".navbar .container" */
-    margin-right: 19px; /* 0.5cm is roughly 18.9px */
+    margin-right: 25px; /* 0.5cm is roughly 18.9px */
 }
 .nav-menu { display: flex; list-style: none; }
 .nav-item { margin-left: 1.25rem; }
