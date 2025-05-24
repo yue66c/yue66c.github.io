@@ -82,7 +82,7 @@ h4 { font-size: 1rem; color: #555; }
 img { max-width: 100%; height: auto; display: block; }
 
 .main-content-wrapper {
-    padding: 15px 0; /* Adjust 15px to be smaller or larger as you prefer */
+    padding: 10px 0; /* Adjust 15px to be smaller or larger as you prefer */
 }
 
 /* Navbar */
@@ -212,8 +212,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav-link:hover, .nav-link.active-page { color: #000; text-decoration: none; }
 
-/* ... (rest of your style.css) ... */
-
 .two-column-layout { display: flex; gap: 40px; align-items: flex-start; }
 .column { flex: 1; }
 
@@ -292,12 +290,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: #f8f9fa;
     color: #555;
     text-align: center;
-    /* padding: 20px 0; -- This was an old setting, ensure it's not conflicting.
-                          The main vertical spacing before the footer is its margin-top. */
-    /* MODIFIED: Reduced margin-top to narrow the gray space
-                 between the main white content container and the footer.
-                 Original was "margin-top: 40px;" */
-    margin-top: 20px; /* Adjust 20px to be smaller or larger as you prefer */
+    margin-top: 10px; /* Adjust 20px to be smaller or larger as you prefer */
     border-top: 1px solid #dee2e6;
     font-size: 0.85rem;
 }
