@@ -106,10 +106,10 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 1.25rem;
     font-weight: normal;
     color: #333;
-    margin-left: 11px;
+    margin-left: 5px;
 }
 .nav-menu-container {
-    margin-right: 11px;
+    margin-right: 5px;
 }
 .nav-menu { display: flex; list-style: none; }
 .nav-item { margin-left: 1.25rem; }
@@ -287,7 +287,6 @@ img { max-width: 100%; height: auto; display: block; }
     background: #f8f9fa;
     color: #555;
     text-align: center;
-    padding: 50px 0;
     margin-top: 15px; /* Adjust 20px to be smaller or larger as you prefer */
     border-top: 1px solid #dee2e6;
     font-size: 0.85rem;
