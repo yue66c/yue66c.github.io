@@ -780,8 +780,9 @@ img { max-width: 100%; height: auto; display: block; }
     .social-links-intro { justify-content: center; text-align: center; }
     
     .two-column-layout {
-        flex-direction: column;  
-        gap: 0;                  
+        flex-direction: column;
+        gap: 20px; /* This creates the space */
+        margin-left: 0; 
     }
     
     .column h2 { text-align: left; }
