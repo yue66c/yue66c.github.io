@@ -1,0 +1,577 @@
+/* Basic Reset & Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alilato Arabic Regular', 'Noto Sans Arabic', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* MODIFIED: Set a background color for the entire page */
+    background-color: #f0f3f5; /* A light, neutral background color */
+    font-size: 16px;
+    padding-top: 70px; /* Adjust if navbar height changes */
+}
+
+/*
+@font-face {
+  font-family: 'Alilato Arabic Regular';
+  src: url('fonts/AlilatoArabic-Regular.woff2') format('woff2'),
+       url('fonts/AlilatoArabic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+.container {
+    width: 100%; /* Allow it to be responsive but constrained */
+    /* MODIFIED: Reduced max-width to make the content block narrower, creating wider side "margins" */
+    max-width: 1200px; /* Was 1200px. Adjust this value to make margins wider or narrower. */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Keeps internal padding within the container for its content */
+}
+
+.main-content-wrapper > .container {
+    background-color: #fff; /* White background for the content "card" */
+    padding-top: 25px;    /* Add some vertical padding inside the card */
+    padding-bottom: 25px; /* Add some vertical padding inside the card */
+    /* Horizontal padding (left/right) will be inherited from the global .container's "padding: 0 20px;" */
+    box-shadow: 0 0 12px rgba(0,0,0,0.06); /* Optional: a subtle shadow for depth */
+    /* If your .main-content-wrapper has top/bottom padding, that will provide space
+       between the navbar/footer and this white content card.
+       The current style.css has: .main-content-wrapper { padding: 30px 0; } which is good. */
+    max-width: 1130px; /* Set new max-width for alignment */
+}
+
+a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+/* Titles like "Your Name" in intro and section main titles */
+h1 {
+    font-size: 2.2rem; /* Or 2.0rem if matching luost.me's "Your Name" more closely */
+    margin-bottom: 1.5rem;
+    font-weight: 500; /* Making "Your Name" title medium as is common */
+}
+
+/* Section titles (e.g., Publications, Projects, and now Education, News) */
+h2 {
+    font-size: 1.5rem; /* luost.me section titles are not very large */
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #eee;
+    /* font-weight will be set specifically where needed */
+}
+
+h3 { font-size: 1.2rem; color: #333; }
+h4 { font-size: 1rem; color: #555; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.main-content-wrapper {
+    padding: 10px 0; /* Adjust 15px to be smaller or larger as you prefer */
+}
+
+/* Navbar */
+.navbar {
+    background: #f8f9fa;
+    padding: 0.75rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+.navbar .container { /* Navbar container can still be wide */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #333;
+    margin-left: 15px;
+}
+.nav-menu-container {
+    margin-right: 15px;
+}
+.nav-menu { display: flex; list-style: none; }
+.nav-item { margin-left: 1.25rem; }
+.nav-link { color: #555; padding: 0.25rem 0; transition: color 0.3s ease; }
+.nav-link:hover, .nav-link.active-page { color: #000; text-decoration: none; }
+.hamburger { display: none; cursor: pointer; }
+.bar { display: block; width: 22px; height: 2px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: #333; }
+
+.content-section {
+    margin-bottom: 40px; /* This provides spacing if multiple sections are in one card */
+    /* padding: 20px 0; */ /* REMOVED - main padding from .main-content-wrapper > .container */
+    background-color: #fff; /* This is for the section itself, card is already white. Fine to keep. */
+}
+.content-section:last-child { margin-bottom: 0; } /* Ensures no extra margin at the bottom of a card if section is last */
+
+
+/* --- Home Page Specific --- */
+#personal-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px; /* Slightly more gap */
+    /* padding-bottom: 30px; */ /* REMOVED - Was to separate from content below in single card */
+    /* border-bottom: 1px solid #eee; */ /* REMOVED - Separation now handled by two cards */
+    /* margin-bottom: 30px; */ /* REMOVED - Separation now handled by two cards */
+    margin-left: 15px; /* Keeps content slightly indented within its card */
+}
+.intro-text {
+    flex-grow: 1; /* Allow it to take space */
+    flex-shrink: 1; /* Allow it to shrink if needed */
+    flex-basis: auto; /* Base its size on content or other width properties */
+    max-width: 75%; 
+}
+.intro-text h1 { 
+    margin-bottom: 0.5rem;
+}
+.intro-text .subtitle { font-size: 1rem; color: #555; margin-bottom: 1.5rem; }
+.intro-text p { margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7; }
+
+.intro-image {
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+}
+.intro-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+
+.social-links-intro { margin-top: 15px; margin-bottom: 20px; }
+.social-links-intro a {
+    margin-right: 18px; 
+    font-size: 0.9rem;
+    color: #6495ED; 
+    text-decoration: none; 
+}
+.social-links-intro a i {
+    margin-right: 6px;
+    font-size: 1.1rem;
+    color: #6495ED; 
+}
+.social-links-intro a:hover,
+.social-links-intro a:hover i {
+    color: #4169E1; 
+    text-decoration: none;
+}
+.social-links-intro a:last-child { margin-right: 0; }
+
+.nav-menu { display: flex; list-style: none; }
+.nav-item {
+    margin-left: 2rem; 
+}
+
+.nav-link {
+    color: #555;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+    font-size: 1rem; 
+}
+.nav-link:hover, .nav-link.active-page { color: #000; text-decoration: none; }
+
+.two-column-layout { display: flex; gap: 40px; align-items: flex-start; margin-left: 15px; } /* margin-left keeps content slightly indented */
+.column { flex: 1; }
+
+
+.column h2 { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex; 
+    align-items: center;
+}
+.column h2 i.title-icon { 
+    margin-right: 8px;
+    font-size: 1.1rem; 
+    color: #555; 
+}
+
+.education-item, .news-item {
+    margin-bottom: 1.5rem;
+}
+.education-item:last-child, .news-item:last-child { margin-bottom: 0; }
+
+.education-item h3, .news-item h3 { 
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+.education-item .university, .education-item .date,
+.news-item .source { 
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+.education-item p, .news-item p {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0;
+}
+.news-item p:not(:first-of-type) { 
+     font-size: 0.9rem;
+     color: #444;
+}
+
+/* --- Publications Page New Layout --- */
+.publications-layout {
+    display: flex;
+    gap: 40px; /* Gap between content and sidebar */
+}
+
+.publications-content {
+    flex: 3; /* Main content area takes more space */
+    min-width: 0; /* Prevents overflow issues with flex items */
+}
+
+.year-navigation {
+    flex: 1; /* Sidebar takes less space */
+    position: sticky;
+    top: 90px; /* Adjust based on your navbar height (70px) + desired offset (20px) */
+    align-self: flex-start; /* Crucial for sticky positioning within a flex container */
+    height: calc(100vh - 110px); /* Adjust height considering navbar and some bottom margin */
+    overflow-y: auto; /* Enable scroll if many years */
+    padding-left: 15px; /* Some space from the content */
+}
+
+.year-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.year-navigation li a.year-link {
+    display: block;
+    padding: 9px 15px; /* vertical | horizontal padding */
+    color: #333; /* Standard link color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 8px; /* Space between year links */
+    font-size: 0.9rem;
+    font-weight: 500; /* Slightly bolder than normal text */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: center; /* Center the text within the button-like link */
+    border: 1px solid transparent; /* For smoother hover/active transition if border is added */
+}
+
+.year-navigation li a.year-link:hover {
+    background-color: #e9ecef; /* Light grey on hover */
+    color: #000;
+}
+
+.year-navigation li a.year-link.active {
+    background-color: #007bff; /* Blue highlight for active year */
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Styling for Publication Year Sections in the main content */
+.publication-year-section {
+    margin-bottom: 50px; /* Space between year blocks */
+}
+.publication-year-section:last-of-type {
+    margin-bottom: 20px;
+}
+
+.publication-year-section h2 { /* Year title e.g., "2024" */
+    font-size: 1.8rem; /* Prominent year heading */
+    font-weight: 600;   /* Bolder than default h2 */
+    color: #343a40;     /* Dark grey */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dee2e6; /* Lighter border for year heading */
+}
+
+.publication-item { 
+    display: flex;
+    gap: 20px; 
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f1f1f1; 
+}
+.publication-year-section .publication-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.publication-image {
+    flex-basis: 130px; 
+    flex-shrink: 0;   
+}
+
+.publication-image img {
+    width: 100%;
+    height: auto; 
+    max-height: 150px; 
+    object-fit: cover; 
+    border-radius: 4px;
+    border: 1px solid #eee; 
+}
+
+.publication-details {
+    flex-grow: 1; 
+}
+
+.publication-details .paper-title {
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    color: #2c3e50; 
+    margin-bottom: 0.4rem;
+}
+
+.spotlight-tag {
+    background-color: #28a745; 
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 500; 
+    letter-spacing: 0.5px;
+}
+
+.publication-details .authors {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+.publication-details .authors strong {
+    color: #000; 
+}
+.publication-details .authors sup {
+    font-size: 0.75em;
+    line-height: 0; 
+    position: relative;
+    vertical-align: baseline;
+    top: -0.3em; 
+}
+
+.publication-details .venue {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d; 
+    margin-bottom: 0.6rem;
+}
+
+.publication-details .abstract {
+    font-size: 0.875rem; 
+    color: #495057;      
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.publication-details .links {
+    margin-top: 10px;
+}
+.publication-details .links .btn-pub {
+    font-size: 0.8rem;
+    margin-right: 6px;
+    margin-bottom: 6px; 
+    background-color: #6c757d; 
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+.publication-details .links .btn-pub:hover {
+    background-color: #545b62; 
+    color: #fff;
+}
+
+/* Responsive adjustments for the new publications page layout */
+@media(max-width: 992px) { /* Tablet */
+    .publications-layout {
+        flex-direction: column; 
+    }
+    .year-navigation {
+        position: static; 
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        margin-bottom: 30px;
+        top: auto;
+        padding-left: 0; 
+        order: -1; 
+    }
+    .year-navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: 8px; 
+    }
+    .year-navigation li a.year-link {
+        margin-bottom: 0; 
+        flex-grow: 1; 
+        min-width: 80px; 
+    }
+    .publication-year-section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width: 768px) { /* Mobile */
+    .publication-item {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    .publication-image {
+        flex-basis: auto;
+        max-width: 200px; 
+        margin: 0 auto 10px auto; 
+    }
+    .publication-details .paper-title {
+        font-size: 1.05rem;
+    }
+    .publication-details .authors,
+    .publication-details .venue,
+    .publication-details .abstract {
+        font-size: 0.85rem;
+    }
+    .publication-details .links .btn-pub {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+    .year-navigation ul {
+        justify-content: space-around; 
+    }
+    .year-navigation li a.year-link {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+        min-width: 70px;
+    }
+}
+
+/* --- Projects/Showcase Page Specific --- */
+.project-grid, .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.project-item, .showcase-item { background: #f9f9f9; border: 1px solid #e7e7e7; border-radius: 5px; padding: 20px; display: flex; flex-direction: column; }
+.project-item img, .showcase-item img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
+.project-item h3, .showcase-item h3 { font-size: 1.15rem; font-weight: bold; margin-bottom: 10px; }
+.project-item p, .showcase-item p { font-size: 0.9rem; flex-grow: 1; margin-bottom: 15px; }
+.project-item .btn, .showcase-item .btn { display: inline-block; background: #007bff; color: #fff; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; text-align: center; margin-top: auto; }
+.project-item .btn:hover, .showcase-item .btn:hover { background: #0056b3; }
+
+/* --- CV Page Specific --- */
+#cv-page .cv-download-link { display: inline-block; background: #007bff; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-size: 1rem; margin: 20px 0; transition: background-color 0.3s ease; }
+#cv-page .cv-download-link:hover { background: #0056b3; color: #fff; }
+#cv-page .cv-highlights ul { list-style: disc; padding-left: 20px; margin-top: 15px; }
+#cv-page .cv-highlights ul li { margin-bottom: 8px; font-size: 0.95rem; }
+
+
+/* Footer */
+.site-footer {
+    background: #f8f9fa;
+    color: #555;
+    text-align: center;
+    margin-top: 15px; 
+    border-top: 1px solid #dee2e6;
+    font-size: 0.85rem;
+}
+.site-footer p { margin-bottom: 8px; }
+.footer-social-links a { color: #555; margin: 0 8px; font-size: 1rem; }
+.footer-social-links a i { transition: color 0.3s ease; }
+.footer-social-links a:hover, .footer-social-links a:hover i { color: #000; }
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    body { padding-top: 60px; font-size: 15px; }
+    .navbar { padding: 0.6rem 0; }
+    .nav-menu {
+        display: none; 
+        position: absolute; 
+        left: 0; 
+        top: 100%; 
+        background-color: #f0f0f0; 
+        width: 100%; 
+        flex-direction: column; 
+        text-align: center; 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+        padding: 10px 0; 
+    }
+    .nav-menu.active {
+        display: flex; 
+    }
+    .nav-item {
+        margin-left: 0; 
+        width: 100%; 
+    }
+    .nav-link {
+        display: block; 
+        padding: 0.75rem 20px; 
+        border-bottom: 1px solid #e0e0e0; 
+    }
+    .nav-item:last-child .nav-link {
+        border-bottom: none; 
+    }
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+     
+    #personal-intro {
+        gap: 15px; 
+    }
+
+    .intro-image { /* Mobile specific styles for intro image */
+        flex-grow: 0;         
+        flex-shrink: 0;       
+        flex-basis: 60px;     
+        max-width: 60px;      
+        height: 60px;         
+        margin-right: 15px;   
+    }
+
+    .intro-image img { /* Mobile specific styles for intro image */
+        width: 60px;          
+        height: 60px;         
+        border-radius: 50%;   
+        object-fit: cover;    
+    }
+
+    .social-links-intro { justify-content: center; text-align: center; }
+    
+    .two-column-layout {
+        flex-direction: column;  
+        gap: 0;                  
+    }
+    
+    .column h2 { text-align: left; }
+    .column h2 i.title-icon { font-size: 1rem; } 
+
+    .container { width: 90%; padding: 0 15px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    /* .content-section { padding: 15px 0; } */ /* This was commented out, padding is now removed from .content-section globally */
+}
