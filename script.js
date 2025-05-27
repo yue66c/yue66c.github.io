@@ -120,6 +120,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- Showcase Slideshow ---
+let slideIndex = 1;
+let slideInterval;
+
+// Function to initialize slideshow (call this if on showcase page)
+function initializeSlideshow() {
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) { // Check if slideshow elements exist on the page
+        showSlides(slideIndex);
+        startAutoSlide();
+
+        // Optional: Pause on hover
+        slideshowContainer.addEventListener('mouseenter', pauseAutoSlide);
+        slideshowContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+}
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+    resetAutoSlide();
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+    resetAutoSlide();
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+
+    if (slides.length === 0) return; // No slides found
+
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("active");
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex-1].style.display = "block";
+    slides[slideIndex-1].classList.add("active");
+    if (dots.length > 0) {
+        dots[slideIndex-1].classList.add("active");
+    }
+}
+
+function startAutoSlide() {
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) { // Only start if on the right page
+       clearInterval(slideInterval); // Clear existing interval
+       slideInterval = setInterval(function() {
+           plusSlides(1);
+       }, 5000); // Change image every 5 seconds
+    }
+}
+
+function pauseAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+function resetAutoSlide() {
+    pauseAutoSlide();
+    startAutoSlide();
+}
+
+// Initialize slideshow when the DOM is ready, specifically if on showcase page
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if we are on the showcase page by looking for a specific element
+    if (document.getElementById('showcase-page')) {
+        initializeSlideshow();
+    }
+});
 // Active page link in navbar (CSS handles this with .active-page class added in HTML)
 // No complex JS needed for this in a multi-page setup.
 // The previously provided scroll-based active link highlighting is removed

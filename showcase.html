@@ -17,7 +17,8 @@
                     <li class="nav-item"><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
                     <li class="nav-item"><a href="projects.html" class="nav-link" id="nav-projects">Projects</a></li>
                     <li class="nav-item"><a href="publications.html" class="nav-link" id="nav-publications">Publications</a></li>
-                    <li class="nav-item"><a href="showcase.html" class="nav-link active-page" id="nav-showcase">Showcase</a></li> <li class="nav-item"><a href="cv.html" class="nav-link" id="nav-cv">CV</a></li>
+                    <li class="nav-item"><a href="showcase.html" class="nav-link active-page" id="nav-showcase">Showcase</a></li>
+                    <li class="nav-item"><a href="cv.html" class="nav-link" id="nav-cv">CV</a></li>
                 </ul>
             </nav>
             <div class="hamburger">
@@ -27,23 +28,49 @@
     </header>
 
     <div class="main-content-wrapper">
-        <div class="container">
-            <section id="showcase-page" class="content-section">
-                <h2>Showcase</h2>
-                <p style="margin-bottom:20px;">Here are some highlights of talks, posters, demos, or other notable academic activities.</p>
-                <div class="showcase-grid"> <div class="showcase-item">
-                        <img src="placeholder_showcase1.jpg" alt="Showcase Item 1 Thumbnail">
-                        <h3>Invited Talk: [Title of Talk]</h3>
-                        <p>Delivered an invited talk at [Conference/Workshop Name], [Location/Virtual], [Date]. The talk focused on [brief summary of the talk content].</p>
-                        <a href="[Link to Slides or Video, if available]" class="btn" target="_blank">View Slides/Recording</a>
+        <div class="container page-container"> <section id="showcase-page" class="content-section">
+                <div class="showcase-wrapper">
+                    <div class="showcase-text-container">
+                        <h2>Welcome to Showcase!</h2>
+                        <p><span class="highlight-pink">Showcase</span> is a page where you can show off almost anything you want. It can be the photo of your pets, your favorite books, your favorite projects, or anything else you want to show to the world.</p>
+                        <p>You can create a new showcase item by creating a new file in the <code class="highlight-code">_showcase</code> folder. It gives you the highest flexibility to customize the item using any HTML code.</p>
+                        <p>Cards are ordered by the <code class="highlight-code">date</code> field in the front matter in descending order. The <code class="highlight-code">width</code> field is used to determine the width of the card, ranging from 1 to 12. Layout is done by the <span class="highlight-blue">Masonry</span> library.</p>
+                        <p>For a tidy layout, it is recommended to set the width of the cards to be either multiple of 3 or multiple of 4 for all cards, except for small badges that do not take up much space (width=1).</p>
                     </div>
-                    <div class="showcase-item">
-                        <img src="placeholder_showcase2.jpg" alt="Showcase Item 2 Thumbnail">
-                        <h3>Poster Presentation: [Poster Title]</h3>
-                        <p>Presented a poster on [topic] at the [Event Name], [Location], [Date]. This work explored [brief summary of poster content].</p>
-                        <a href="[Link to Poster PDF, if available]" class="btn" target="_blank">View Poster</a>
+                    <div class="showcase-image-container">
+                        <div class="slideshow-container">
+                            <div class="slide fade active">
+                                <img src="placeholder_showcase1.jpg" alt="Showcase Image 1">
+                                <div class="slide-caption">
+                                    <h3>Photo 1</h3>
+                                    <p>A cool description for the first image.</p>
+                                </div>
+                            </div>
+                            <div class="slide fade">
+                                <img src="placeholder_showcase2.jpg" alt="Showcase Image 2">
+                                <div class="slide-caption">
+                                    <h3>Photo 2</h3>
+                                    <p>Details about the second image.</p>
+                                </div>
+                            </div>
+                            <div class="slide fade">
+                                <img src="portrait.jpg" alt="Showcase Image 3">
+                                <div class="slide-caption">
+                                    <h3>Photo 3</h3>
+                                    <p>More information on this showcase item.</p>
+                                </div>
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <div class="slide-indicators">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
                     </div>
-                    </div>
+                </div>
             </section>
         </div>
     </div>
