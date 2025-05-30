@@ -777,7 +777,7 @@ img { max-width: 100%; height: auto; display: block; }
         object-fit: cover;    
     }
 
-    .social-links-intro { margin-left: 15px; }
+    .social-links-intro { margin-left: 0; }
 
     .two-column-layout {
         flex-direction: column; 
