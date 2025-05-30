@@ -135,7 +135,7 @@ img { max-width: 100%; height: auto; display: block; }
     /* padding-bottom: 30px; */ /* REMOVED - Was to separate from content below in single card */
     /* border-bottom: 1px solid #eee; */ /* REMOVED - Separation now handled by two cards */
     /* margin-bottom: 30px; */ /* REMOVED - Separation now handled by two cards */
-    margin-left: 35px; /* Keeps content slightly indented within its card */
+    margin-left: 50px; /* Keeps content slightly indented within its card */
 }
 .intro-text {
     flex-grow: 1; /* Allow it to take space */
