@@ -135,7 +135,7 @@ img { max-width: 100%; height: auto; display: block; }
     /* padding-bottom: 30px; */ /* REMOVED - Was to separate from content below in single card */
     /* border-bottom: 1px solid #eee; */ /* REMOVED - Separation now handled by two cards */
     /* margin-bottom: 30px; */ /* REMOVED - Separation now handled by two cards */
-    margin-left: 15px; /* Keeps content slightly indented within its card */
+    margin-left: 25px; /* Keeps content slightly indented within its card */
 }
 .intro-text {
     flex-grow: 1; /* Allow it to take space */
@@ -180,7 +180,7 @@ img { max-width: 100%; height: auto; display: block; }
     color: #4169E1; 
     text-decoration: none;
 }
-.social-links-intro a:last-child { margin-right: 0; }
+.social-links-intro a:last-child { margin-right: 15px; }
 
 .nav-menu { display: flex; list-style: none; }
 .nav-item {
