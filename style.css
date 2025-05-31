@@ -195,7 +195,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav-link:hover, .nav-link.active-page { color: #000; text-decoration: none; }
 
-.two-column-layout { display: flex; gap: 40px; align-items: flex-start; margin-left: 15px; } /* margin-left keeps content slightly indented */
+.two-column-layout { display: flex; gap: 40px; align-items: flex-start; margin-left: 30px; } /* margin-left keeps content slightly indented */
 .column { flex: 1; }
 
 
@@ -782,7 +782,7 @@ img { max-width: 100%; height: auto; display: block; }
     .two-column-layout {
         flex-direction: column; 
         gap: 1.5em;             
-        margin-left: 15px;         
+        margin-left: 30px;         
     }
     
     .column h2 { text-align: left; }
