@@ -501,6 +501,7 @@ img { max-width: 100%; height: auto; display: block; }
     margin: 0;
     padding: 0;
     border-bottom: none;
+    text-align: center;
 }
 
 #projects-page .page-subtitle {
@@ -636,7 +637,7 @@ img { max-width: 100%; height: auto; display: block; }
     display: inline-flex; /* For aligning icon and text */
     align-items: center; /* Vertically center icon and text */
     gap: 6px; /* Space between icon and text */
-    background-color: #007bff;
+    background-color: #77b8f6;
     color: #fff;
     padding: 7px 14px;
     font-size: 0.8rem;
@@ -650,7 +651,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .article-meta .btn-view:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: #fff;
     text-decoration: none;
 }
@@ -757,6 +758,7 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.8rem;
+    text-align: center;
 }
 
 .showcase-wrapper {
