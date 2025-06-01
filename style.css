@@ -288,7 +288,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .year-navigation li a.year-link.active {
-    background-color: #8cc5fa; /* Blue highlight for active year */
+    background-color: #77b8f6; /* Blue highlight for active year */
     color: #fff;
     font-weight: bold;
 }
@@ -969,7 +969,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ... rest of your CSS ... */
 
 /* --- CV Page Specific --- */
-#cv-page .cv-download-link { display: inline-block; background: #8cc5fa; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-size: 1rem; margin: 20px 0; transition: background-color 0.3s ease; }
+#cv-page .cv-download-link { display: inline-block; background: #77b8f6; color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-size: 1rem; margin: 20px 0; transition: background-color 0.3s ease; }
 #cv-page .cv-download-link:hover { background: #007bff; color: #fff; }
 #cv-page .cv-highlights ul { list-style: disc; padding-left: 20px; margin-top: 15px; }
 #cv-page .cv-highlights ul li { margin-bottom: 8px; font-size: 0.95rem; }
