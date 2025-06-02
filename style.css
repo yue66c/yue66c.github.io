@@ -474,7 +474,111 @@ img { max-width: 100%; height: auto; display: block; }
     }
 }
 
-/* --- Projects/Showcase Page Specific --- */
+/* --- Showcase Page - Blog Section --- */
+.showcase-blog-section {
+    margin-top: 60px; /* Space below the showcase-wrapper (text & slideshow) */
+    padding-top: 30px; /* Space above the first blog item */
+    border-top: 1px solid #e9ecef; /* A light separator line */
+}
+
+/* Optional styling for a general title for the blog section (e.g., if you uncomment <h3>Recent Writings</h3>) */
+/*
+.showcase-blog-section > h3 {
+    font-size: 1.6rem;
+    color: #343a40;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+}
+*/
+
+.blog-post-item {
+    margin-bottom: 35px; /* Space between individual blog post items */
+}
+
+.blog-post-item:last-child {
+    margin-bottom: 0; /* No bottom margin for the last item */
+}
+
+.blog-post-title {
+    font-size: 1.3rem;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 0.6rem; /* Space between title and description */
+    position: relative; /* Needed for the ::before pseudo-element (the bar) */
+    padding-left: 22px; /* Space for the bar (width + gap) */
+    line-height: 1.4; /* Adjust for multi-line titles if necessary */
+}
+
+.blog-post-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px; /* Align bar nicely with the text, adjust if font changes */
+    bottom: 2px; /* Ensures bar stretches if title wraps and has padding */
+    width: 6px; /* Thickness of the vertical blue bar */
+    background-color: #0d6efd; /* A vibrant blue, similar to Bootstrap's primary blue */
+    border-radius: 2px; /* Slightly rounded edges for the bar */
+}
+
+.blog-post-description {
+    font-size: 0.95rem;
+    color: #555a64; /* Softer color for the description text */
+    line-height: 1.65;
+    margin-bottom: 0.8rem; /* Space between description and links */
+    padding-left: 22px; /* Align with the title text (after the bar) */
+}
+
+.blog-post-links {
+    font-size: 0.9rem;
+    padding-left: 22px; /* Align with the title text */
+}
+
+.blog-post-links a {
+    color: #007bff; /* Standard link blue */
+    text-decoration: underline; /* Underlined links as in the example image */
+    margin-right: 18px; /* Space between multiple links */
+    font-weight: 500; /* Slightly bolder links */
+}
+
+.blog-post-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: none; /* Optional: remove underline on hover */
+}
+
+/* Responsive adjustments for the blog section */
+@media (max-width: 768px) {
+    .showcase-blog-section {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+    /*
+    .showcase-blog-section > h3 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+    */
+    .blog-post-title {
+        font-size: 1.15rem;
+        padding-left: 18px; /* Adjust padding for smaller bar */
+    }
+    .blog-post-title::before {
+        width: 5px; /* Slightly thinner bar for mobile */
+        top: 1px;
+        bottom: 1px;
+    }
+    .blog-post-description,
+    .blog-post-links {
+        font-size: 0.9rem;
+        padding-left: 18px; /* Match title's padding */
+    }
+    .blog-post-links a {
+        margin-right: 15px;
+    }
+}
+
+/* --- Projects Page Specific --- */
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 .project-item { background: #f9f9f9; border: 1px solid #e7e7e7; border-radius: 5px; padding: 20px; display: flex; flex-direction: column; }
 .project-item img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
