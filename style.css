@@ -518,7 +518,7 @@ img { max-width: 100%; height: auto; display: block; }
     top: 2px; /* Align bar nicely with the text, adjust if font changes */
     bottom: 2px; /* Ensures bar stretches if title wraps and has padding */
     width: 6px; /* Thickness of the vertical blue bar */
-    background-color: #0d6efd; /* A vibrant blue, similar to Bootstrap's primary blue */
+    background-color: #77b8f6; /* A vibrant blue, similar to Bootstrap's primary blue */
     border-radius: 2px; /* Slightly rounded edges for the bar */
 }
 
@@ -536,14 +536,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .blog-post-links a {
-    color: #007bff; /* Standard link blue */
+    color: #77b8f6; /* Standard link blue */
     text-decoration: underline; /* Underlined links as in the example image */
     margin-right: 18px; /* Space between multiple links */
     font-weight: 500; /* Slightly bolder links */
 }
 
 .blog-post-links a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #007bff; /* Darker blue on hover */
     text-decoration: none; /* Optional: remove underline on hover */
 }
 
