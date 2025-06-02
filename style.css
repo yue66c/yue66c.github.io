@@ -758,7 +758,7 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.8rem;
-    text-align: center;
+    margin-left: 15%;
 }
 
 .showcase-wrapper {
@@ -976,6 +976,11 @@ img { max-width: 100%; height: auto; display: block; }
 #cv-page .cv-highlights ul { list-style: disc; padding-left: 20px; margin-top: 15px; }
 #cv-page .cv-highlights ul li { margin-bottom: 8px; font-size: 0.95rem; }
 
+#cv-page h2 {
+    text-align: center;
+    /* You can add other specific styles for the CV title here if needed,
+       otherwise, it will inherit generic h2 styles. */
+}
 
 /* Footer */
 .site-footer {
