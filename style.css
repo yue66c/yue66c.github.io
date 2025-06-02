@@ -758,7 +758,7 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.8rem;
-    margin-left: 15%;
+    text-align: 15%;
 }
 
 .showcase-wrapper {
