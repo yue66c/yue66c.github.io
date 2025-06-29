@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Your Name</a>
+            <nav class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link" id="nav-projects">Projects</a></li>
+                    <li class="nav-item"><a href="showcase.html" class="nav-link active-page" id="nav-showcase">Showcase</a></li>
+                    <li class="nav-item"><a href="cv.html" class="nav-link" id="nav-cv">CV</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content-wrapper">
+        <div class="container page-container">
+            <section id="showcase-page" class="content-section">
+                <div class="showcase-wrapper">
+                    <div class="showcase-text-container">
+                        <h2>Welcome to Showcase!</h2>
+                        <p><span class="highlight-pink">Showcase</span> is a page where you can show off almost anything you want. It can be the photo of your pets, your favorite books, your favorite projects, or anything else you want to show to the world.</p>
+                        <p>You can create a new showcase item by creating a new file in the <code class="highlight-code">_showcase</code> folder. It gives you the highest flexibility to customize the item using any HTML code.</p>
+                        <p>Cards are ordered by the <code class="highlight-code">date</code> field in the front matter in descending order. The <code class="highlight-code">width</code> field is used to determine the width of the card, ranging from 1 to 12. Layout is done by the <span class="highlight-blue">Masonry</span> library.</p>
+                        <p>For a tidy layout, it is recommended to set the width of the cards to be either multiple of 3 or multiple of 4 for all cards, except for small badges that do not take up much space (width=1).</p>
+                    </div>
+                    <div class="showcase-image-container">
+                        <div class="slideshow-container">
+                            <div class="slide fade active">
+                                <img src="placeholder_showcase1.jpg" alt="Showcase Image 1">
+                                <div class="slide-caption">
+                                    <h3>Photo 1</h3>
+                                    <p>A cool description for the first image.</p>
+                                </div>
+                            </div>
+                            <div class="slide fade">
+                                <img src="placeholder_showcase2.jpg" alt="Showcase Image 2">
+                                <div class="slide-caption">
+                                    <h3>Photo 2</h3>
+                                    <p>Details about the second image.</p>
+                                </div>
+                            </div>
+                            <div class="slide fade">
+                                <img src="portrait.jpg" alt="Showcase Image 3"> <div class="slide-caption">
+                                    <h3>Photo 3</h3>
+                                    <p>More information on this showcase item.</p>
+                                </div>
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <div class="slide-indicators">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-blog-section">
+                    <div class="blog-post-item">
+                        <h4 class="blog-post-title">Beyond the Future of AI: The Dreams and Deceptions of Cryptocurrency</h4>
+                        <p class="blog-post-description">My vision of the future: from Bitcoin to an AGI-driven decentralized society</p>
+                        <div class="blog-post-links">
+                            <a href="[link_to_english_version_crypto]" target="_blank">[Blog Link]</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-post-item">
+                        <h4 class="blog-post-title">LexiMind: An Open-Source LLM-Powered Vocabulary Builder</h4>
+                        <p class="blog-post-description">LexiMind is an AI-powered vocabulary builder that integrates LLM-based translation with smart word retention. It's designed to help users efficiently learn new words by saving unfamiliar words to a personal word bank and reviewing them with spaced repetition.</p>
+                        <div class="blog-post-links">
+                            <a href="[link_to_project_link_leximind]" target="_blank">[Blog Link]</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+        </div>
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+        <div class="container">
+             <div class="footer-social-links">
+                 <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="[Link to your GitHub]" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="[Link to your LinkedIn]" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a> 
+            </div>
+            <p>&copy; <span id="currentYear"></span> Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
